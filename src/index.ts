@@ -29,9 +29,9 @@ console.log("Confidence:", analysis.confidence + "%");
 console.log("Reason:", analysis.reason);
 
 console.log("\n[3] RISK GATE");
+console.log("Status: PASSED");
 
 if (analysis.decision === "BUY" && analysis.confidence >= 80) {
-  console.log("Status: PASSED");
   console.log("Action: BUY signal approved");
 
   console.log("\n[4] BINANCE DEMO");
@@ -41,7 +41,6 @@ if (analysis.decision === "BUY" && analysis.confidence >= 80) {
   console.log("\n[5] PORTFOLIO");
   console.log("Portfolio action prepared.");
 } else {
-  console.log("Status: PASSED");
   console.log("Action: NO TRADE");
 
   console.log("\n[4] BINANCE DEMO");
