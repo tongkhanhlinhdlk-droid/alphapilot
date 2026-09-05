@@ -28,28 +28,27 @@ console.log("Decision:", analysis.decision);
 console.log("Confidence:", analysis.confidence + "%");
 console.log("Reason:", analysis.reason);
 
+console.log("\n[3] RISK GATE");
+
 if (analysis.decision === "BUY" && analysis.confidence >= 80) {
-  console.log("\n[3] RISK GATE");
   console.log("Status: PASSED");
+  console.log("Action: BUY signal approved");
 
   console.log("\n[4] BINANCE DEMO");
-  console.log("Executing BUY order: 10 USDT");
-
-  const order = JSON.parse(
-    binance(
-      "binance-cli spot new-order --symbol BTCUSDT --side BUY --type MARKET --quoteOrderQty 10"
-    )
-  );
-
-  console.log("Order ID:", order.orderId);
-  console.log("Status:", order.status);
-  console.log("Executed BTC:", order.executedQty);
+  console.log("Trade execution available in Demo Trading.");
+  console.log("No automatic order placed.");
 
   console.log("\n[5] PORTFOLIO");
-  console.log("BTC position updated.");
-  console.log("\nAlphaPilot completed successfully.");
+  console.log("Portfolio action prepared.");
 } else {
-  console.log("\n[3] RISK GATE");
   console.log("Status: PASSED");
   console.log("Action: NO TRADE");
+
+  console.log("\n[4] BINANCE DEMO");
+  console.log("No order executed.");
+
+  console.log("\n[5] PORTFOLIO");
+  console.log("Portfolio unchanged.");
 }
+
+console.log("\nAlphaPilot completed successfully.");
