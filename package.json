@@ -1,6 +1,7 @@
 {
   "dependencies": {
     "@anthropic-ai/sdk": "^0.124.0",
+    "@modelcontextprotocol/client": "^2.0.0",
     "dotenv": "^17.4.2"
   },
   "devDependencies": {
