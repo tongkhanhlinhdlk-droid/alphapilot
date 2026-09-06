@@ -19,8 +19,9 @@ const ticker24h = JSON.parse(
   binance("npx binance-cli spot ticker24hr --symbol BTCUSDT --json true --profile AlphaPilot-Demo")
 );
 
-const momentum = Number(ticker24h.priceChangePercent);
-
+const LIVE_MOMENTUM = Number(ticker24h.priceChangePercent);
+const DEMO_BUY = process.env.ALPHAPILOT_DEMO_BUY === "true";
+const momentum = DEMO_BUY ? 1.5 : LIVE_MOMENTUM;
 console.log("\n[1] MARKET");
 console.log("BTCUSDT:", price);
 console.log("Momentum:", momentum + "%");
