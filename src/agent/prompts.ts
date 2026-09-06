@@ -1,8 +1,8 @@
-export function buildPrompt(price: number) {
-  return 
+﻿export function buildPrompt(price: number) {
+  return `
 You are AlphaPilot, an AI portfolio operator.
 
-Current BTCUSDT price: 
+Current BTCUSDT price: ${price}
 
 Analyze the market and return:
 1. Decision: BUY, SELL, or HOLD
@@ -10,5 +10,5 @@ Analyze the market and return:
 3. Reason: one short explanation
 
 Keep the response concise.
-;
+`;
 }

@@ -1,23 +1,23 @@
 export function analyzeMarket(price: number, momentum: number) {
-  if (momentum >= 2) {
+  if (momentum >= 1) {
     return {
       decision: "BUY",
-      confidence: 88,
-      reason: "Positive momentum suggests increasing buying pressure."
+      confidence: Math.min(95, 80 + Math.round(momentum * 3)),
+      reason: `BTCUSDT is showing positive 24h momentum at ${momentum.toFixed(3)}%, indicating stronger buying pressure.`
     };
   }
 
-  if (momentum <= -2) {
+  if (momentum <= -1) {
     return {
       decision: "SELL",
-      confidence: 86,
-      reason: "Negative momentum suggests increasing selling pressure."
+      confidence: Math.min(95, 80 + Math.round(Math.abs(momentum) * 3)),
+      reason: `BTCUSDT is showing negative 24h momentum at ${momentum.toFixed(3)}%, indicating increasing selling pressure.`
     };
   }
 
   return {
     decision: "HOLD",
     confidence: 72,
-    reason: "Momentum is weak; waiting for stronger confirmation."
+    reason: `BTCUSDT momentum is ${momentum.toFixed(3)}%, which is not strong enough to justify a trade.`
   };
 }
